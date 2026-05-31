@@ -2,7 +2,7 @@ Write-Host "Downloading and setting custom wallpaper..." -ForegroundColor Cyan
 
 # 1. Define the direct Google Drive URL and where to save the image
 $url = "https://drive.google.com/uc?export=download&id=1HYunfpyfvZVEW7Faii_GsqnX_L6AyW7x"
-$picturePath = "$env:USERPROFILE\Pictures\CustomWallpaper.jpg"
+$picturePath = "$env:USERPROFILE\Pictures\Wallpaper\CustomWallpaper.jpg"
 
 # 2. Download the image
 Invoke-WebRequest -Uri $url -OutFile $picturePath -UseBasicParsing
@@ -28,4 +28,3 @@ Add-Type -TypeDefinition $setWallpaperCode
 [Wallpaper]::Set($picturePath)
 
 Write-Host "Wallpaper updated successfully!" -ForegroundColor Green
-pause
