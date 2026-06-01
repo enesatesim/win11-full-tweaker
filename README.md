@@ -1,3 +1,8 @@
+Enable running scripts in powershell by setting it to "Unrestricted" or "RemoteSigned" (normally it is set to "Restricted")
+```
+Set-ExecutionPolicy Unrestricted
+```
+
 Open Powershell with admin rights and then paste one of the below. All of them are redirected to the same thing.
 
 Nice link
