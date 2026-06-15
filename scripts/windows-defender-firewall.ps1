@@ -11,9 +11,5 @@ foreach ($app in $matrix) {
     $appPath = $app[1]
 
     # Block the application using Windows Defender Firewall
-    New-NetFirewallRule `
-        -DisplayName "Block Adobe $appName" `
-        -Direction Outbound `
-        -Program $appPath `
-        -Action Block
+    New-NetFirewallRule -DisplayName "Block Adobe $appName" -Direction Outbound -Program $appPath -Action Block
 }
