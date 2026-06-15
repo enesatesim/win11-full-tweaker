@@ -1,8 +1,8 @@
-# Matrix of applications and their paths
+# Matrix of applications and their paths (Notice the commas at the start of each line)
 $matrix = @(
-    @("Acrobat"     , "%ProgramFiles%\Adobe\Acrobat DC\Acrobat\Acrobat.exe")
-    @("Illustrator" , "%ProgramFiles%\Adobe\Adobe Illustrator 2026\Support Files\Contents\Windows\Illustrator.exe")
-    @("Photoshop"   , "%ProgramFiles%\Adobe\Adobe Photoshop 2026\Photoshop.exe")
+    , @("Acrobat"     , "%ProgramFiles%\Adobe\Acrobat DC\Acrobat\Acrobat.exe")
+    , @("Illustrator" , "%ProgramFiles%\Adobe\Adobe Illustrator 2026\Support Files\Contents\Windows\Illustrator.exe")
+    , @("Photoshop"   , "%ProgramFiles%\Adobe\Adobe Photoshop 2026\Photoshop.exe")
 )
 
 # Loop through each item in the matrix
@@ -11,5 +11,9 @@ foreach ($app in $matrix) {
     $appPath = $app[1]
 
     # Block the application using Windows Defender Firewall
-    New-NetFirewallRule -DisplayName "Block Adobe $appName" -Direction Outbound -Program $appPath -Action Block
+    New-NetFirewallRule `
+        -DisplayName "Block Adobe $appName" `
+        -Direction Outbound `
+        -Program $appPath `
+        -Action Block
 }
