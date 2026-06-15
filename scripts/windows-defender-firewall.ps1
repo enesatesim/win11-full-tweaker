@@ -1,5 +1,5 @@
 # Define the years you want to block
-$years = @("2025", "2026", "2027")
+$years = @("2024", "2025", "2026", "2027")
 
 # Matrix of applications and their paths using {YEAR} as a placeholder
 $matrix = @(
@@ -22,7 +22,7 @@ foreach ($app in $matrix) {
         # Create a rule for each year
         foreach ($year in $years) {
             $versionedPath = $appPath -replace "{YEAR}", $year
-            $ruleName = "Block Adobe $appName $year Internet Access"
+            $ruleName = "Block Internet Access - Adobe $appName $year"
 
             New-NetFirewallRule `
                 -DisplayName $ruleName `
@@ -34,8 +34,8 @@ foreach ($app in $matrix) {
     }
     else {
         # Create a single rule for non-versioned apps (e.g., Acrobat)
-        $ruleName = "Block Adobe $appName Internet Access"
-        
+        $ruleName = "Block Internet Access - Adobe $appName"
+
         New-NetFirewallRule `
             -DisplayName $ruleName `
             -Direction Outbound `
