@@ -1,12 +1,15 @@
+$AdobePath = "%ProgramFiles%\Adobe\"
+$AdobePathA = $AdobePath + "Adobe "
+
 # 1. Define the matrix using {0} where you want the program name to appear
 $rawMatrix = @(
-    , @("Acrobat"       , "%ProgramFiles%\Adobe\Acrobat DC\Acrobat\{0}.exe")
-    , @("After Effects" , "%ProgramFiles%\Adobe\Adobe After Effects 2026\Support Files\AfterFX.exe") # No {0} needed here
-    , @("Illustrator"   , "%ProgramFiles%\Adobe\Adobe {0} 2026\Support Files\Contents\Windows\{0}.exe")
-    , @("InDesign"      , "%ProgramFiles%\Adobe\Adobe {0} 2026\{0}.exe")
-    , @("Photoshop"     , "%ProgramFiles%\Adobe\Adobe {0} 2026\{0}.exe")
-    , @("Premiere Pro"  , "%ProgramFiles%\Adobe\Adobe {0} 2026\Adobe {0}.exe")
-    , @("Media Encoder" , "%ProgramFiles%\Adobe\Adobe {0} 2026\Adobe {0}.exe")
+    , @("Acrobat"       , $AdobePath  + "{0} DC\{0}\{0}.exe")
+    , @("After Effects" , $AdobePathA + "{0} 2026\Support Files\AfterFX.exe") # No {0} needed here
+    , @("Illustrator"   , $AdobePathA + "{0} 2026\Support Files\Contents\Windows\{0}.exe")
+    , @("InDesign"      , $AdobePathA + "{0} 2026\{0}.exe")
+    , @("Photoshop"     , $AdobePathA + "{0} 2026\{0}.exe")
+    , @("Premiere Pro"  , $AdobePathA + "{0} 2026\Adobe {0}.exe")
+    , @("Media Encoder" , $AdobePathA + "{0} 2026\Adobe {0}.exe")
 )
 
 # 2. Process the matrix to inject the names into the paths
