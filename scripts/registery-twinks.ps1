@@ -26,3 +26,7 @@ function DisableStoreSearchSuggestionsForAllUsers {
     $defaultStoreDbPath = GetUserDirectory -userName "Default" -fileName "AppData\Local\Packages\Microsoft.WindowsStore_8wekyb3d8bbwe\LocalState\store.db" -exitIfPathNotFound $false
     DisableStoreSearchSuggestions $defaultStoreDbPath
 }
+
+Write-Host "> Disabling Microsoft Store search suggestions in the start menu for all users..."
+DisableStoreSearchSuggestionsForAllUsers
+Write-Host ""
