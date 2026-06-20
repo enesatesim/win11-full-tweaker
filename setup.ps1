@@ -1,4 +1,8 @@
 Write-Host "Downloading Win11 Full Tweaker..."
+
+# If you need to bypass system execution policy, run setup.bat instead.
+# This wrapper launches PowerShell with -ExecutionPolicy Bypass to ensure the script can run.
+
 $zip = "$env:TEMP\StarterPack.zip"
 $dir = "$env:TEMP\StarterPack"
 
