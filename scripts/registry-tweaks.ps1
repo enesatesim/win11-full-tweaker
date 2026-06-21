@@ -17,7 +17,7 @@ Get-ChildItem -Path $regDir -Filter *.reg -File | Sort-Object Name | ForEach-Obj
     }
 
     # 4. Print the meaningful message without a line break yet
-    Write-Host "Applying tweak: $description..." -NoNewline
+    Write-Host "$description" -NoNewline
     
     # 5. Run the import, suppressing standard output and errors
     $null = reg import $_.FullName 2>&1
