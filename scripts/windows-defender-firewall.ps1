@@ -1,9 +1,9 @@
 # Get the current year dynamically
 $currentYear = (Get-Date).Year
 
-# Generate an array of years from (Current Year - 4) to (Current Year + 1)
-# Example: If it's 2026, this creates @(2022, 2023, 2024, 2025, 2026, 2027)
-$years = ($currentYear - 4)..($currentYear + 1)
+# Generate an array of years from (Current Year - 2) to (Current Year + 2)
+# Example: If it's 2026, this creates @(2024, 2025, 2026, 2027, 2028)
+$years = ($currentYear - 2)..($currentYear + 2)
 
 # Matrix of applications and their paths using {YEAR} as a placeholder
 $matrix = @(
