@@ -12,6 +12,9 @@ $bloatware = @(
     "Microsoft.BingWeather",
     "Microsoft.GetHelp",
     "Microsoft.YourPhone",
+    "Microsoft.Windows.DevHome",
+    "Microsoft.GamingApp",
+    "Microsoft.XboxGameOverlay",
     "MicrosoftCorporationII.QuickAssist"
 )
 
