@@ -19,7 +19,7 @@ $scriptsDir = "$rootDir\scripts"
 & "$scriptsDir\install-apps.ps1"
 
 # Restart Windows Explorer to apply changes
-Stop-Process -Name explorer -Force
+# Stop-Process -Name explorer -Force
 
 Write-Host "Setup completed successfully!" -ForegroundColor Green
 pause
