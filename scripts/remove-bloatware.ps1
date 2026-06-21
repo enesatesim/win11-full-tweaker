@@ -19,7 +19,7 @@ $bloatware = @(
 )
 
 foreach ($app in $bloatware) {
-    Write-Host "Removing " -ForegroundColor Red -NoNewline
+    Write-Host "[Removing] " -ForegroundColor Red -NoNewline
     Write-Host "$app"
     Get-AppxPackage -Name "*$app*" -AllUsers | Remove-AppxPackage -AllUsers -ErrorAction SilentlyContinue
 }

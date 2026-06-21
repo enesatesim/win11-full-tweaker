@@ -15,17 +15,17 @@ Get-ChildItem -Path $regDir -Filter *.reg -File | Sort-Object Name | ForEach-Obj
     if ($firstComment) {
         $description = $firstComment -replace '^\s*;\s*', ''
     }
-
-    # 4. Print the meaningful message without a line break yet
-    Write-Host "$description" -NoNewline
     
-    # 5. Run the import, suppressing standard output and errors
+    # 4. Run the import, suppressing standard output and errors
     $null = reg import $_.FullName 2>&1
 
-    # 6. Check the exit code and print a clean status
+    # 5. Check the exit code and print a clean status
     if ($LASTEXITCODE -eq 0) {
-        Write-Host " [Success]" -ForegroundColor Blue
+        Write-Host "[Success] " -ForegroundColor Blue -NoNewline
     } else {
-        Write-Host " [Failed]" -ForegroundColor Red
+        Write-Host "[Failed] " -ForegroundColor Red -NoNewline
     }
+
+    # 6. Print the meaningful message without a line break yet
+    Write-Host "$description"
 }
