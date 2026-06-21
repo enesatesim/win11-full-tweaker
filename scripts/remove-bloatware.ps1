@@ -12,11 +12,10 @@ $bloatware = @(
     "Microsoft.BingWeather",
     "Microsoft.GetHelp",
     "Microsoft.YourPhone",
-    "Microsoft.WindowsAlarms",
     "MicrosoftCorporationII.QuickAssist"
 )
 
 foreach ($app in $bloatware) {
-    Write-Host "Removing $app..."
+    Write-Host "Removing $app..." -ForegroundColor Red
     Get-AppxPackage -Name "*$app*" -AllUsers | Remove-AppxPackage -AllUsers -ErrorAction SilentlyContinue
 }
