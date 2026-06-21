@@ -45,4 +45,4 @@ function Write-Rainbow {
     Write-Host ""
 }
 
-Write-Rainbow "SETUP COMPLETED!"
+& "$scriptsDir\outro.ps1"
