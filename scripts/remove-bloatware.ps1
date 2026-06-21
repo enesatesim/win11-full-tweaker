@@ -1,19 +1,19 @@
 $bloatware = @(
-    "*Clipchamp.Clipchamp*",
-    "*Microsoft.WindowsFeedbackHub*",
-    "*Microsoft.Todos*",
-    "*Microsoft.PowerAutomateDesktop*",
-    "*Microsoft.MicrosoftSolitaireCollection*",
-    "*Microsoft.MicrosoftOfficeHub*",
-    "*Microsoft.BingNews*",
-    "*Microsoft.BingSearch*",
-    "*Microsoft.MicrosoftStickyNotes*",
-    "*Microsoft.Microsoft.BingWeather*",
-    "*Microsoft.BingWeather*",
-    "*Microsoft.GetHelp*",
-    "*Microsoft.YourPhone*",
-    "*Microsoft.WindowsAlarms*",
-    "*MicrosoftCorporationII.QuickAssist*"
+    "Clipchamp.Clipchamp",
+    "Microsoft.WindowsFeedbackHub",
+    "Microsoft.Todos",
+    "Microsoft.PowerAutomateDesktop",
+    "Microsoft.MicrosoftSolitaireCollection",
+    "Microsoft.MicrosoftOfficeHub",
+    "Microsoft.BingNews",
+    "Microsoft.BingSearch",
+    "Microsoft.MicrosoftStickyNotes",
+    "Microsoft.Microsoft.BingWeather",
+    "Microsoft.BingWeather",
+    "Microsoft.GetHelp",
+    "Microsoft.YourPhone",
+    "Microsoft.WindowsAlarms",
+    "MicrosoftCorporationII.QuickAssist"
 )
 
 foreach ($app in $bloatware) {
