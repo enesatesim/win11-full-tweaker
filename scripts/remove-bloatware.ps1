@@ -14,7 +14,7 @@ $bloatware = @(
     "Microsoft.YourPhone",
     "Microsoft.Windows.DevHome",
     "Microsoft.GamingApp",
-    "Microsoft.XboxGameOverlay",
+    "Microsoft.XboxGamingOverlay",
     "MicrosoftCorporationII.QuickAssist"
 )
 
