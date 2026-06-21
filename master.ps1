@@ -12,7 +12,7 @@ $rootDir = $PSScriptRoot
 $scriptsDir = "$rootDir\scripts"
 
 # Execute the local child scripts
-# & "$scriptsDir\remove-bloatware.ps1"
+& "$scriptsDir\remove-bloatware.ps1"
 & "$scriptsDir\registry-tweaks.ps1"
 & "$scriptsDir\set-desktop-wallpaper.ps1"
 # & "$scriptsDir\windows-defender-firewall.ps1"
