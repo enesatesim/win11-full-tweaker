@@ -24,7 +24,7 @@ Get-ChildItem -Path $regDir -Filter *.reg -File | Sort-Object Name | ForEach-Obj
 
     # 6. Check the exit code and print a clean status
     if ($LASTEXITCODE -eq 0) {
-        Write-Host " [Success]" -ForegroundColor Green
+        Write-Host " [Success]" -ForegroundColor Blue
     } else {
         Write-Host " [Failed]" -ForegroundColor Red
     }
