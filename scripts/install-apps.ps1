@@ -1,9 +1,8 @@
 $favApps = @(
     "voidtools.Everything.Alpha",
     "M2Team.NanaZip",
-    "Nilesoft.Shell",
-    "RamenSoftware.Windhawk",
-    "AutoHotkey.AutoHotkey"
+    "AntibodySoftware.WizTree",
+    "Voidstar.FilePilot"
 )
 
 foreach ($app in $favApps) {
