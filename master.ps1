@@ -45,4 +45,4 @@ function Write-Rainbow {
     Write-Host ""
 }
 
-Write-Rainbow "Setup completed successfully!"
+Write-Rainbow "SETUP COMPLETED!"
