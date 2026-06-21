@@ -8,5 +8,11 @@ $favApps = @(
 
 foreach ($app in $favApps) {
     Write-Host "Installing $app..."
-    winget.exe install --id "$app" --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force
+    winget.exe install --id "$app" --exact `
+        --source winget `
+        --accept-source-agreements `
+        --disable-interactivity `
+        --silent `
+        --accept-package-agreements `
+        --force
 }
