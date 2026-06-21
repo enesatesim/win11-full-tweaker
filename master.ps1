@@ -23,4 +23,4 @@ $scriptsDir = "$rootDir\scripts"
 Write-Host "Restarting Windows Explorer to apply changes..." -ForegroundColor Yellow
 Stop-Process -Name explorer -Force
 
-Write-Host "Setup completed successfully!" -ForegroundColor Green
+Write-Rainbow "Setup completed successfully!"

@@ -50,7 +50,7 @@ $Result = [Wallpaper]::SystemParametersInfo(
 )
 
 if ($Result) {
-    Write-Host "Success! Wallpaper has been updated to: $ImagePath" -ForegroundColor Green
+    Write-Host "Wallpaper has been updated!" -ForegroundColor Purple
 } else {
     Write-Error "Failed to update the wallpaper."
 }
