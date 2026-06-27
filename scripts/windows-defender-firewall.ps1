@@ -50,6 +50,7 @@ foreach ($app in $matrix) {
             -Action Block `
             -ErrorAction SilentlyContinue | Out-Null
         
-        Write-Host "[Block Internet Access] Adobe $appName"
+        Write-Host "[Block Internet Access] " -ForegroundColor Red -NoNewline
+        Write-Host "Adobe $appName $year"
     }
 }
