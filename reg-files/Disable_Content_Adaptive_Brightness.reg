@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+; Disable Content Adaptive Brightness
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
+"CABCOption"=dword:00000000
+
+
