@@ -17,11 +17,11 @@ $scriptsDir = "$rootDir\scripts"
 & "$scriptsDir\registry-tweaks.ps1"
 & "$scriptsDir\set-desktop-wallpaper.ps1"
 & "$scriptsDir\windows-defender-firewall.ps1"
-# & "$scriptsDir\install-apps.ps1"
 & "$scriptsDir\power-config.ps1"
 
 # Restart Windows Explorer to apply changes
 Write-Host "Restarting Windows Explorer to apply changes..." -ForegroundColor Yellow
 Stop-Process -Name explorer -Force
 
+# & "$scriptsDir\install-apps.ps1"
 & "$scriptsDir\outro.ps1"
