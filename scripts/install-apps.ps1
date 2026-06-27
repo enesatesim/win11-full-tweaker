@@ -1,6 +1,26 @@
-$favApps = @(
-    "Brave.Brave"
-    "9PFXXSHC64H3",
+function Install-AppList {
+    param(
+        [string[]]$Apps,
+        [string]$Source = "winget"
+    )
+
+    foreach ($app in $Apps) {
+        Write-Host "Installing $app..." -ForegroundColor Green
+
+        winget.exe install `
+            --id "$app" `
+            --exact `
+            --source $Source `
+            --accept-source-agreements `
+            --disable-interactivity `
+            --silent `
+            --accept-package-agreements `
+            --force
+    }
+}
+
+$favWingetApps = @(
+    "Brave.Brave",
     "M2Team.NanaZip",
     "AntibodySoftware.WizTree",
     "AutoHotkey.AutoHotkey",
@@ -12,13 +32,9 @@ $favApps = @(
     "Nilesoft.Shell"
 )
 
-foreach ($app in $favApps) {
-    Write-Host "Installing $app..." -ForegroundColor Green
-    winget.exe install --id "$app" --exact `
-        --source winget `
-        --accept-source-agreements `
-        --disable-interactivity `
-        --silent `
-        --accept-package-agreements `
-        --force
-}
+$favMSStoreApps = @(
+    "9PFXXSHC64H3"
+)
+
+Install-AppList -Apps $favMSStoreApps -Source "msstore"
+Install-AppList -Apps $favWingetApps -Source "winget"
