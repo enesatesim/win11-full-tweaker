@@ -2,8 +2,8 @@
 $currentYear = (Get-Date).Year
 
 # Generate an array of years from (Current Year - 2) to (Current Year + 2)
-# Example: If it's 2026, this creates @(2024, 2025, 2026, 2027, 2028)
-$years = ($currentYear - 2)..($currentYear + 2)
+# Example: If it's 2026, this creates @(2025, 2026, 2027)
+$years = ($currentYear - 1)..($currentYear + 1)
 
 # Matrix of applications and their paths using {YEAR} as a placeholder
 $matrix = @(
@@ -33,7 +33,9 @@ foreach ($app in $matrix) {
                 -Direction Outbound `
                 -Program $versionedPath `
                 -Action Block `
-                -ErrorAction SilentlyContinue
+                -ErrorAction SilentlyContinue | Out-Null
+            
+            Write-Host "[Block Internet Access] Adobe $appName $year"
         }
     }
     else {
@@ -45,6 +47,8 @@ foreach ($app in $matrix) {
             -Direction Outbound `
             -Program $appPath `
             -Action Block `
-            -ErrorAction SilentlyContinue
+            -ErrorAction SilentlyContinue | Out-Null
+        
+        Write-Host "[Block Internet Access] Adobe $appName"
     }
 }
