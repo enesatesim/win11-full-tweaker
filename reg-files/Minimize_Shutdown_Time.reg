@@ -1,6 +1,6 @@
 Windows Registry Editor Version 5.00
 
-; Minimize shut down time by 250ms termination of running apps
+; Minimize shut down delay
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
 "WaitToKillServiceTimeout"="250"
 
