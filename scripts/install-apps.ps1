@@ -22,7 +22,7 @@ foreach ($app in $favMSStoreApps) {
     winget.exe install `
         --id "$app" `
         --exact `
-        --source winget `
+        --source msstore `
         --accept-source-agreements `
         --disable-interactivity `
         --silent `
