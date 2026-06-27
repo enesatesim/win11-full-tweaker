@@ -15,7 +15,8 @@ $favMSStoreApps = @(
     "9PFXXSHC64H3"
 )
 
-foreach ($app in $favWingetApps) {
+
+foreach ($app in $favMSStoreApps) {
     Write-Host "Installing $app..." -ForegroundColor Green
 
     winget.exe install `
@@ -29,7 +30,7 @@ foreach ($app in $favWingetApps) {
         --force
 }
 
-foreach ($app in $favMSStoreApps) {
+foreach ($app in $favWingetApps) {
     Write-Host "Installing $app..." -ForegroundColor Green
 
     winget.exe install `
