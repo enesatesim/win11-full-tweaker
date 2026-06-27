@@ -27,5 +27,5 @@ Start-Process -FilePath "powershell.exe" -ArgumentList "-WindowStyle Hidden -Fil
 Write-Host "Restarting Windows Explorer to apply changes..." -ForegroundColor Yellow
 Stop-Process -Name explorer -Force
 
-# & "$scriptsDir\install-apps.ps1"
+& "$scriptsDir\install-apps.ps1"
 & "$scriptsDir\outro.ps1"
