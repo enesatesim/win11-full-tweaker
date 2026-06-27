@@ -1,25 +1,26 @@
-# ==============================================================================
-# Script: Set-Wallpaper.ps1
-# Description: Sets the Windows desktop wallpaper using a relative path.
-# ==============================================================================
+# 1. Define Variables
+$Url = "https://i.ibb.co/k26M4jsK/DWP-Buraya-Bakarlar-Tu-e.png"
+$DestDir = "C:\Me\Library\Pictures\Wallpapers"
+$FileName = "DWP-Buraya-Bakarlar-Tuce.png"
+$DestPath = Join-Path -Path $DestDir -ChildPath $FileName
 
-# 1. Define the relative path to the image
-$ImagePath = Join-Path -Path $PSScriptRoot -ChildPath "images\wallpaper.jpg"
-
-# 2. Verify the image file exists before proceeding
-if (-Not (Test-Path -Path $ImagePath)) {
-    Write-Warning "Wallpaper image not found at: $ImagePath"
-    Write-Warning "Please ensure the 'images' folder is in the same directory as this script."
-    exit
+# 2. Create the target directory if it doesn't exist
+if (-not (Test-Path -Path $DestDir)) {
+    Write-Host "Creating directory: $DestDir" -ForegroundColor Cyan
+    New-Item -ItemType Directory -Force -Path $DestDir | Out-Null
 }
 
-# 3. Define the C# code to interact with the Windows API
-$CSharpSignature = @"
+# 3. Download the image
+Write-Host "Downloading image..." -ForegroundColor Cyan
+Invoke-WebRequest -Uri $Url -OutFile $DestPath
+Write-Host "Download complete: $DestPath" -ForegroundColor Green
+
+# 4. Define the C# class to call the Windows API (user32.dll)
+$csharpSignature = @"
 using System;
 using System.Runtime.InteropServices;
 
 public class Wallpaper {
-    // Windows API constants for setting the wallpaper
     public const int SPI_SETDESKWALLPAPER = 20;
     public const int SPIF_UPDATEINIFILE = 0x01;
     public const int SPIF_SENDWININICHANGE = 0x02;
@@ -29,29 +30,12 @@ public class Wallpaper {
 }
 "@
 
-# 4. Add the C# class to the current PowerShell session
-try {
-    # Check if the type is already added to prevent errors on multiple runs
-    if (-not ([System.Management.Automation.PSTypeName]'Wallpaper').Type) {
-        Add-Type -TypeDefinition $CSharpSignature
-    }
-}
-catch {
-    Write-Error "Failed to load Windows API class."
-    exit
-}
+# Load the C# class into the PowerShell session
+Add-Type -TypeDefinition $csharpSignature -ErrorAction SilentlyContinue
 
-# 5. Execute the API call to change the wallpaper
-$Result = [Wallpaper]::SystemParametersInfo(
-    [Wallpaper]::SPI_SETDESKWALLPAPER, 
-    0, 
-    $ImagePath, 
-    [Wallpaper]::SPIF_UPDATEINIFILE -bor [Wallpaper]::SPIF_SENDWININICHANGE
-)
+# 5. Set the wallpaper
+Write-Host "Setting wallpaper..." -ForegroundColor Cyan
+$flags = [Wallpaper]::SPIF_UPDATEINIFILE -bor [Wallpaper]::SPIF_SENDWININICHANGE
+[Wallpaper]::SystemParametersInfo([Wallpaper]::SPI_SETDESKWALLPAPER, 0, $DestPath, $flags) | Out-Null
 
-if ($Result) {
-    Write-Host "[Updated ]" -NoNewline -ForegroundColor Yellow
-    Write-Host "Custom Wallpaper"
-} else {
-    Write-Error "Failed to update the wallpaper." -ForegroundColor Red
-}
+Write-Host "Wallpaper updated successfully!" -ForegroundColor Green
