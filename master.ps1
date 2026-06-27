@@ -11,11 +11,15 @@ Write-Host "Running as Administrator. Proceeding with Setup..." -ForegroundColor
 $rootDir = $PSScriptRoot
 $scriptsDir = "$rootDir\scripts"
 
+
+
+# Launch the wallpaper script asynchronously in a hidden, independent process
+Start-Process -FilePath "powershell.exe" -ArgumentList "-WindowStyle Hidden -File `"$scriptsDir\set-desktop-wallpaper.ps1`""
+
 # Execute the local child scripts
 & "$scriptsDir\remove-bloatware.ps1"
 & "$scriptsDir\disable-startup-apps.ps1"
 & "$scriptsDir\registry-tweaks.ps1"
-& "$scriptsDir\set-desktop-wallpaper.ps1"
 & "$scriptsDir\windows-defender-firewall.ps1"
 & "$scriptsDir\power-config.ps1"
 
