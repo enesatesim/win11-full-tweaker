@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+; Disable "Show frequently used folders" in File Explorer
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"ShowFrequent"=dword:00000000
+
+
