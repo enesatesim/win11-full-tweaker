@@ -1,5 +1,5 @@
 # 1. Define Variables
-$Url = "https://i.ibb.co/k26M4jsK/DWP-Buraya-Bakarlar-Tu-e.png"
+$Url = "https://i.ibb.co/5hgTgZVJ/DWP-Buraya-Bakarlar-1080.png"
 $DestDir = "C:\Me\Library\Pictures\Wallpapers"
 $FileName = "DWP-Buraya-Bakarlar-Tuce.png"
 $DestPath = Join-Path -Path $DestDir -ChildPath $FileName
