@@ -1,7 +1,7 @@
 # 1. Define Variables
-$Url = "https://i.ibb.co/5hgTgZVJ/DWP-Buraya-Bakarlar-1080.png"
+$Url = "https://i.ibb.co/6RkwW0br/bliss-win11-dark-16x9.png"
 $DestDir = "C:\Me\Library\Pictures\Wallpapers"
-$FileName = "DWP-Buraya-Bakarlar-Tuce.png"
+$FileName = "bliss-win11-dark-16x9.png"
 $DestPath = Join-Path -Path $DestDir -ChildPath $FileName
 
 # 2. Create the target directory if it doesn't exist
