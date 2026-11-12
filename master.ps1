@@ -22,6 +22,7 @@ Start-Process -FilePath "powershell.exe" -ArgumentList "-WindowStyle Hidden -Fil
 & "$scriptsDir\registry-tweaks.ps1"
 & "$scriptsDir\windows-defender-firewall.ps1"
 & "$scriptsDir\power-config.ps1"
+& "$scriptsDir\set-regional-format.ps1"
 
 # Restart Windows Explorer to apply changes
 Write-Host "Restarting Windows Explorer to apply changes..." -ForegroundColor Yellow
