@@ -16,6 +16,9 @@ $scriptsDir = "$rootDir\scripts"
 # Launch the wallpaper script asynchronously in a hidden, independent process
 Start-Process -FilePath "powershell.exe" -ArgumentList "-WindowStyle Hidden -File `"$scriptsDir\set-desktop-wallpaper.ps1`""
 
+# Launch the profile picture script asynchronously in a hidden, independent process
+Start-Process -FilePath "powershell.exe" -ArgumentList "-WindowStyle Hidden -File `"$scriptsDir\set-profile-picture.ps1`""
+
 # Execute the local child scripts
 & "$scriptsDir\remove-bloatware.ps1"
 & "$scriptsDir\disable-startup-apps.ps1"
